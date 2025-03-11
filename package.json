@@ -1,0 +1,36 @@
+{
+  "name": "las-casitas-del-hornero-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmaxx2/las-casitas-del-hornero-api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanmaxx2/las-casitas-del-hornero-api/issues"
+  },
+  "homepage": "https://github.com/juanmaxx2/las-casitas-del-hornero-api#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mercadopago": "^1.5.16",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.2",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
