@@ -3,9 +3,19 @@ const { conn } = require("./src/db.js");
 
 module.exports = async (req, res) => {
   try {
-    await conn.sync({ force: false }); // Sincronizar base de datos
-    server(req, res); // Pasar la solicitud a Express
+    // Intentar conectar con la base de datos
+    await conn.sync({ force: false });
+
+    // Si todo sale bien, responder con la solicitud de Express
+    server(req, res);
   } catch (error) {
-    res.status(500).json({ error: "Error al conectar con la base de datos" });
+    console.error("Error al conectar con la base de datos o al procesar la solicitud:", error);
+
+    // Responder con un error 500 detallado
+    res.status(500).json({
+      error: "Error en el servidor",
+      message: error.message,
+      stack: error.stack,
+    });
   }
 };
