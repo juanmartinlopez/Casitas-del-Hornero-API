@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-// import routers:
+// Import routers:
 const hotelsRouter = require("./hotelsRouter");
 const favRouter = require("./favRouter");
 const userRouter = require("./userRouter");
@@ -12,11 +12,17 @@ const reviewRouter = require("./reviewRouter");
 const NodeMailerRouter = require("./NodeMailerRouter");
 const bookingRouter = require("./bookingRouter");
 const roomsRouter = require("./roomsRouter");
-const requestRouter = require("./requestRouter")
-const mercadoPagoRouter = require("./mercadoPagoRouter")
+const requestRouter = require("./requestRouter");
+const mercadoPagoRouter = require("./mercadoPagoRouter");
+
 const router = Router();
 
-//* RUTAS *//
+// Ruta para la raíz
+router.get("/", (req, res) => {
+    res.send("¡Bienvenido a la API de Las Casitas del Hornero!");
+});
+
+// RUTAS
 router.use("/email", NodeMailerRouter);
 router.use("/user", userRouter);
 router.use("/hotels", hotelsRouter);
@@ -29,7 +35,6 @@ router.use("/review", reviewRouter);
 router.use("/booking", bookingRouter);
 router.use("/rooms", roomsRouter);
 router.use("/request", requestRouter);
-router.use("/payment", mercadoPagoRouter)
+router.use("/payment", mercadoPagoRouter);
 
-//****************************************/
 module.exports = router;
