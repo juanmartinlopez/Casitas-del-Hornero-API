@@ -14,5 +14,5 @@ server.use(express.json());
 //*********RUTAS*********/
 server.use("/", routes);
 
-// ✅ Vercel espera una función, así que exportamos el handler
+// Exporta la función de manejo de solicitudes
 module.exports = server;

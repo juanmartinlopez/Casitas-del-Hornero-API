@@ -31,6 +31,5 @@ router.use("/rooms", roomsRouter);
 router.use("/request", requestRouter);
 router.use("/payment", mercadoPagoRouter)
 
-
 //****************************************/
 module.exports = router;
